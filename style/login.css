@@ -4,6 +4,7 @@ body {
     background-color: rgb(30, 30, 30);
     color: rgb(245, 245, 245);
     height: 100vh;
+    min-width: 2000px;
 }
 
 .container-fluid {
@@ -11,6 +12,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
+    &>header {
+        position: absolute;
+        top: 0;
+    }
 }
 
 .card {
