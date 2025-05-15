@@ -1,6 +1,6 @@
 $('a.imdb').css('display', 'none');
 $('#logout').hide();
-let isProfileMenuOpened = false;
+let isProfileMenuOpened = true;
 
 $('td').click(function (event) {
     if ($(event.target).is('a.sm')) {

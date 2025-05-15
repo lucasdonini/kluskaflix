@@ -10,15 +10,16 @@ function login() {
     const inEmail = $('#e-mail').val().trim();
 
     if (inEmail === '') {
-        alert('Campo de e-mail está Vazio');
+        $('#e-mail-input span').css('display', 'inline').text('*campo obrigatório vazio').hide().fadeIn();
     } else if (inEmail !== email) {
-        alert('e-mail não encontrado');
+        $('#e-mail-input span').css('display', 'inline').text('*e-mail não encontrado').hide().fadeIn();
     } else {
+        $('#e-mail-input span').hide();
         if (inPass === '') {
-            alert('campo de senha está vazio');
+            $('#password-input span').css('display', 'inline').text('*campo obrigatório vazio').hide().fadeIn();
         } else if (inPass !== password) {
             $('#forgot-password').show();
-            alert('senha incorreta');
+            $('#password-input span').css('display', 'inline').text('*senha incorreta').hide().fadeIn();
         } else {
             window.location.assign('main-page.html');
         }
