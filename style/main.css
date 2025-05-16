@@ -82,9 +82,12 @@ td {
     border-radius: 15px;
     background-color: rgb(50, 50, 50);
     box-shadow: 3px 4px 3px rgb(22, 22, 22);
+    transition: 0.5s;
 
     &:hover {
         cursor: pointer;
+        transform: scale(1.08);
+        box-shadow: 6px 8px 4px rgb(22, 22, 22);
     }
 }
 
