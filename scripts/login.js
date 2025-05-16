@@ -1,38 +1,58 @@
+//style applications
 $('#forgot-password').hide();
 $('#login').css('transform', 'translateY(35px)');
 
+//password and email
 const password = '030310';
 const email = 'lkd.lucas@gmail.com';
 
+//selector constants
+const emailField = '#email-input';
+const passwordField = '#password-input';
+const emailInput = '#e-mail';
+const passwordInput = '#password';
 
+//utility functions
+const wrong = selector => $(selector).removeClass('default right').addClass('wrong');
+const right = selector => $(selector).removeClass('default wrong').addClass('right');
+const error = (selector, message) => $(selector + ' span').css('display', 'inline').text('*' + message).hide().fadeIn();
+
+//main function
 function login() {
-    const inPass = $('#password').val().trim();
-    const inEmail = $('#e-mail').val().trim();
+    const inPass = $(passwordInput).val().trim();
+    const inEmail = $(emailInput).val().trim();
 
     if (inEmail === '') {
-        $('#e-mail-input span').css('display', 'inline').text('*campo obrigatório vazio').hide().fadeIn();
+        error(emailField, 'campo obrigatório vazio');
+        wrong(emailInput);
     } else if (inEmail !== email) {
-        $('#e-mail-input span').css('display', 'inline').text('*e-mail não encontrado').hide().fadeIn();
+        error(emailField, 'e-mail não encontrado');
+        wrong(emailInput);
     } else {
-        $('#e-mail-input span').hide();
+        $(emailField + ' span').hide();
+        right(emailInput);
         if (inPass === '') {
-            $('#password-input span').css('display', 'inline').text('*campo obrigatório vazio').hide().fadeIn();
+            error(passwordField, 'campo obrigatório vazio');
+            wrong(passwordInput);
         } else if (inPass !== password) {
             $('#forgot-password').show();
-            $('#password-input span').css('display', 'inline').text('*senha incorreta').hide().fadeIn();
+            error(passwordField, 'senha incorreta');
+            wrong(passwordInput);
         } else {
+            right(passwordInput);
             window.location.assign('main-page.html');
         }
     }
 }
 
-$('form').on('submit', function (e) {
-    e.preventDefault();
+//event listeners
+$('form').on('submit', function (event) {
+    event.preventDefault();
     login();
 });
 
 $('#show-password').on('click', function () {
-    const field = $('#password');
+    const field = $(passwordInput);
     const fieldType = field.prop('type') === 'password' ? 'text' : 'password';
     field.prop('type', fieldType);
 });

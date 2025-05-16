@@ -57,6 +57,7 @@ span {
     display: none;
     font-size: 1.3em;
     color: rgb(223, 0, 0);
+    margin-left: 10px;
 }
 
 #login {
@@ -75,9 +76,20 @@ input.form-control {
     &:focus {
         background-color: rgb(60, 60, 60);
         border: none;
-        box-shadow: 3px 4px 3px rgb(41, 0, 0);
         color: inherit;
         font-size: 1.3rem;
+    }
+
+    &.wrong:focus {
+        box-shadow: 3px 4px 3px rgb(41, 0, 0);
+    }
+
+    &.right:focus {
+        box-shadow: 3px 4px 3px rgb(0, 41, 7);
+    }
+
+    &.default:focus {
+        box-shadow: 3px 4px 3px rgb(39, 35, 0);
     }
 }
 
