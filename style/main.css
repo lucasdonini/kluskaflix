@@ -1,12 +1,12 @@
 body {
-    min-width: 1200px;
+    min-width: 1500px;
     min-height: 480px;
     overflow-x: auto;
     margin: 0;
     padding: 0;
     background-color: rgb(30, 30, 30);
     color: rgb(245, 245, 245);
-    font-size: 1.3em;
+    position: relative;
 }
 
 .container-fluid>main {
@@ -34,6 +34,7 @@ body {
     right: 20px;
     width: fit-content;
     height: fit-content;
+    font-size: 0.75em;
 
     div {
         display: flex;
@@ -47,14 +48,14 @@ body {
 }
 
 #profile-picture {
-    transform: scale(0.4) translateX(60px) translateY(-26px);
+    transform: scale(0.3) translateX(120px) translateY(-26px);
 }
 
 #logout {
     position: absolute;
     right: 0;
     bottom: -5px;
-    width: 75%;
+    width: 65%;
     color: rgb(245, 245, 245);
     font-weight: bold;
     background-color: rgb(188, 0, 0);
@@ -72,7 +73,7 @@ table {
     border-collapse: separate;
     border-spacing: 12px;
     table-layout: fixed;
-    width: 80%;
+    width: 75%;
 }
 
 td {
@@ -86,7 +87,7 @@ td {
 
     &:hover {
         cursor: pointer;
-        transform: scale(1.08);
+        transform: scale(1.045);
         box-shadow: 6px 8px 4px rgb(22, 22, 22);
     }
 }
@@ -109,7 +110,7 @@ article {
 }
 
 h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 
 a {
@@ -117,7 +118,7 @@ a {
 }
 
 hr {
-    width: 78%;
+    width: 73%;
     border: 0.5px solid rgb(245, 245, 245);
 }
 

@@ -6,7 +6,6 @@ body {
     padding: 0;
     background-color: rgb(30, 30, 30);
     color: rgb(245, 245, 245);
-    font-size: 130%;
 }
 
 #logo {
@@ -24,7 +23,7 @@ body {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
 }
 
 #corpo {
@@ -42,7 +41,7 @@ h1 {
 
         img {
             border-radius: 15px;
-            width: 50%;
+            width: 40%;
             margin: 24px auto;
             aspect-ratio: 1/1.38;
             object-fit: cover;
