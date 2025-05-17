@@ -3,8 +3,8 @@ $('#forgot-password').hide();
 $('#login').css('transform', 'translateY(35px)');
 
 //password and email
-const password = '030310';
-const email = 'lkd.lucas@gmail.com';
+const password = '';
+const email = '';
 
 //selector constants
 const emailField = '#email-input';
@@ -22,7 +22,9 @@ function login() {
     const inPass = $(passwordInput).val().trim();
     const inEmail = $(emailInput).val().trim();
 
-    if (inEmail === '') {
+    if (password === '' && email === '') {
+        window.location.assign('main-page.html');
+    } else if (inEmail === '') {
         error(emailField, 'campo obrigatório vazio');
         wrong(emailInput);
     } else if (inEmail !== email) {
