@@ -25,4 +25,6 @@ $('#profile').on('click', function () {
 });
 
 
-$('#logout').on('click', () => window.location.assign('index.html'));
+$('#logout').on('click', () => {
+    localStorage.removeItem('loggedEmail');
+    window.location.assign('index.html');});

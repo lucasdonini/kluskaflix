@@ -16,6 +16,7 @@ const passwordInput = '#password';
 const wrong = selector => $(selector).removeClass('default right').addClass('wrong');
 const right = selector => $(selector).removeClass('default wrong').addClass('right');
 const error = (selector, message) => $(selector + ' span').css('display', 'inline').text('*' + message).hide().fadeIn();
+const saveLogin = credentials => localStorage.setItem('loggedEmail', credentials);
 
 //main function
 function login() {
@@ -23,6 +24,7 @@ function login() {
     const inEmail = $(emailInput).val().trim();
 
     if (password === '' && email === '') {
+        saveLogin(inEmail);
         window.location.assign('main-page.html');
     } else if (inEmail === '') {
         error(emailField, 'campo obrigatório vazio');
@@ -42,6 +44,7 @@ function login() {
             wrong(passwordInput);
         } else {
             right(passwordInput);
+            saveLogin(inEmail);
             window.location.assign('main-page.html');
         }
     }
